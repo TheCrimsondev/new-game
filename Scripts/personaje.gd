@@ -3,7 +3,7 @@ class_name Jugador
 
 
 const SPEED = 120.0
-const JUMP_VELOCITY = -240.0
+const JUMP_VELOCITY = -260.0
 
 @onready var animacion = $AnimatedSprite2D
 

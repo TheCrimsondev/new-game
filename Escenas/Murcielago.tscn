@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://i3ywu5v2q6xt"]
+
+[ext_resource type="Script" path="res://Scripts/murcielago.gd" id="1_wbkwd"]
+[ext_resource type="Texture2D" uid="uid://bksrcr45iu7ml" path="res://Assed_used/bat.png" id="2_2vnk4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbasb"]
+atlas = ExtResource("2_2vnk4")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u87bf"]
+atlas = ExtResource("2_2vnk4")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrhdg"]
+atlas = ExtResource("2_2vnk4")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lu7co"]
+atlas = ExtResource("2_2vnk4")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rp7f5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbasb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u87bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrhdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lu7co")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Murcielago" type="Node2D"]
+script = ExtResource("1_wbkwd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rp7f5")
+autoplay = "default"
+frame_progress = 0.566302

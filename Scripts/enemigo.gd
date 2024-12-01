@@ -1,4 +1,5 @@
 extends CharacterBody2D
+
 class_name Enemigo
 
 @onready var animacion = $AnimatedSprite2D
@@ -7,7 +8,7 @@ var vida = 3
 var ir_izquierda = true
 
 const SPEED = 40.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -600.0
 
 func _on_timer_timeout() -> void:
 	ir_izquierda = !ir_izquierda
