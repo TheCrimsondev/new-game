@@ -16,6 +16,10 @@ func _on_timer_timeout() -> void:
 func _physics_process(delta: float) -> void:
 	var direccion
 	
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	
 	if ir_izquierda:
 		direccion = Vector2.LEFT
 	else:
@@ -52,6 +56,6 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 func Ataque():
 	var cuerpos = $Area2D.get_overlapping_bodies()
 	for cuerpo in cuerpos:
-		if cuerpo is Jugador:
+		if cuerpo is Player:
 			cuerpo.Daño()
 		

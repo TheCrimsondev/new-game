@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://i3ywu5v2q6xt"]
+[gd_scene load_steps=9 format=3 uid="uid://i3ywu5v2q6xt"]
 
 [ext_resource type="Script" path="res://Scripts/murcielago.gd" id="1_wbkwd"]
 [ext_resource type="Texture2D" uid="uid://bksrcr45iu7ml" path="res://Assed_used/bat.png" id="2_2vnk4"]
@@ -39,10 +39,24 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Murcielago" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8p37y"]
+radius = 6.0
+
+[node name="Murcielago" type="Area2D"]
 script = ExtResource("1_wbkwd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rp7f5")
 autoplay = "default"
-frame_progress = 0.566302
+frame_progress = 0.893579
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("CircleShape2D_8p37y")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
